@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SmartCameraLBTA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xk1-iA-OtK">
+                                <rect key="frame" x="0.0" y="52" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="l5f-wU-FoO">
+                                        <nil key="title"/>
+                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2am-I4-5Po">
+                                            <rect key="frame" x="126" y="2.6666666666666679" width="123" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Search"/>
+                                            <connections>
+                                                <segue destination="PvH-pb-Mip" kind="show" id="6AG-kB-Gb0"/>
+                                            </connections>
+                                        </button>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.200000000000003" y="38.423645320197046"/>
+        </scene>
+        <!--Maps View Controller-->
+        <scene sceneID="J1l-Nl-Yu2">
+            <objects>
+                <viewController id="PvH-pb-Mip" customClass="MapsViewController" customModule="SmartCameraLBTA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xOl-8R-O3a"/>
+                        <viewControllerLayoutGuide type="bottom" id="VGK-eQ-PpQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="99F-FC-xZ1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-5G-FWT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PvH-pb-Mip" id="pXK-aK-u6b"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwP-d9-KSq">
+                                <rect key="frame" x="0.0" y="52" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="Tvj-l4-f2T">
+                                        <nil key="title"/>
+                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CxB-05-2BC">
+                                            <rect key="frame" x="126" y="2.6666666666666679" width="123" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Close"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="97m-wX-X0h"/>
+                                            </connections>
+                                        </button>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="E09-LU-6yO"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6zn-5G-FWT" firstAttribute="trailing" secondItem="ZwP-d9-KSq" secondAttribute="trailing" id="2Jh-8p-Rgu"/>
+                            <constraint firstAttribute="trailing" secondItem="6zn-5G-FWT" secondAttribute="trailing" id="6lz-Fi-yM5"/>
+                            <constraint firstItem="6zn-5G-FWT" firstAttribute="leading" secondItem="99F-FC-xZ1" secondAttribute="leading" id="JWQ-Mw-XlP"/>
+                            <constraint firstAttribute="bottom" secondItem="6zn-5G-FWT" secondAttribute="bottom" id="S15-EY-SmN"/>
+                            <constraint firstItem="6zn-5G-FWT" firstAttribute="leading" secondItem="ZwP-d9-KSq" secondAttribute="leading" id="Yrd-ev-1la"/>
+                            <constraint firstItem="6zn-5G-FWT" firstAttribute="top" secondItem="99F-FC-xZ1" secondAttribute="top" id="iEb-fD-sgL"/>
+                            <constraint firstItem="ZwP-d9-KSq" firstAttribute="top" secondItem="xOl-8R-O3a" secondAttribute="bottom" constant="8" id="oxY-Zb-Q6V"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="6zn-5G-FWT" id="lHP-8p-gd3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gv4-gl-Yzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978.39999999999998" y="38.423645320197046"/>
+        </scene>
+    </scenes>
+</document>
